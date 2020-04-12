@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/fake_index_style.css')}}">
+  <title>Li's Blog</title>
+</head>
+<body>
+  <div class="container">
+    <svg viewBox="0 0 2000 600">
+      <symbol id="line-text">
+        <text text-anchor="middle" x="50%" y="50%" dy=".4em">
+          Welcome To Li's Blog
+        </text>
+      </symbol>
+      <use xlink:href="#line-text" class="text"></use>
+      <use xlink:href="#line-text" class="text"></use>
+      <use xlink:href="#line-text" class="text"></use>
+      <use xlink:href="#line-text" class="text"></use>
+    </svg>
+  </div>
+<script src="{{url_for('static', filename='js/count.js')}}"></script>
+</body>
+</html>

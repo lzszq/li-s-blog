@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>li's blog</title>
+<meta name="description" content="个人博客，是一个学生的个人博客" />
+<meta name="keywords" content="个人博客，Li_个人博客，Li" />
+<meta name="author" content="Li" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{url_for('static', filename='css/base.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/m.css')}}" rel="stylesheet">
+
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-2.1.1.min.js')}}"></script>
+
+</head>
+<body>
+<header>
+  <div id="mnav">
+    <div class="logo"><a href="http://blog.lizesen.xyz">Li's Blog</a></div>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+    <ul id="starlist">
+      <li><a href="http://blog.lizesen.xyz/login">新建博客</a></li>
+      <li><a href="http://blog.lizesen.xyz/login">删除博客</a></li>
+    </ul>
+  </div>
+</header>
+<div class="line46"></div>
+<div class="blank"></div>
+<article>
+    <div class="infos">
+        <div class="newsview">
+      ......
+      </div>
+    </div>
+
+      <div class="share">
+      <div class="hide_box" style="display: none;"></div>
+      <div class="shang_box" style="display: none;">
+    <script type="text/javascript">
+    function dashangToggle(){
+    	$(".hide_box").fadeToggle();
+    	$(".shang_box").fadeToggle();
+    }
+    </script> 
+      </div>
+    </div>
+    </div>
+</article>
+<footer>
+  <p>Powered by <a>Li</a> <a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action">闽ICP备20002404号</a></p>
+</footer>
+</body>
+</html>

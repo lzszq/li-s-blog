@@ -1,0 +1,7 @@
+top    415*155
+
+QQ    344*344
+
+head_portrait  300*256
+
+special   **

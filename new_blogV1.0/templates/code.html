@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>li's blog</title>
+<meta name="description" content="个人博客，是一个学生的个人博客" />
+<meta name="keywords" content="个人博客，Li_个人博客，Li" />
+<meta name="author" content="Li" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{url_for('static', filename='css/base.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/m.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/editormd.css')}}" rel="stylesheet">
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-2.1.1.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/page.js')}}"></script>
+</head>
+<body>
+<header>
+  <div id="mnav">
+    <div class="logo"><a href="http://blog.lizesen.xyz">Li's Blog</a></div>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+    <ul id="starlist">
+      <li><a href="http://blog.lizesen.xyz/index">网站首页</a></li>
+      <li><a href="http://blog.lizesen.xyz/cppshare/1">C++</a></li>
+      <li><a href="http://blog.lizesen.xyz/pythonshare/1">Python</a></li>
+      <li><a href="http://blog.lizesen.xyz/projectshare/1">Project</a></li>
+    </ul>
+  </div>
+  <script>
+window.onload = function ()
+{
+	var oH2 = document.getElementById("mnavh"); 
+	var oUl = document.getElementById("starlist");  
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script>
+<script type="text/javascript">
+    window.jQuery || document.write(unescape('%3cscript+src%3d%22http%3a%2f%2fcode.jquery.com%2fjquery-2.1.4.min.js%22%3e%3c%2fscript%3e'));
+</script>
+<script src="{{url_for('static', filename='js/marked.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/prettify.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/editormd.min.js')}}"></script>
+<script type="text/javascript">
+$(function() {
+    var markdowns = document.getElementsByClassName("md_content");
+    $(markdowns).each(function(){
+        var markdown = $(this).children("#append-test").text();
+        //$('#md_content_'+i).text('');
+        var testEditormdView;
+        testEditormdView = editormd.markdownToHTML($(this).attr("id"), {
+            markdown: markdown,//+ "\r\n" + $("#append-test").text(),
+            toolbarAutoFixed : false,
+            htmlDecode: true,
+            emoji: false,
+            tex: true,
+            toc: true,
+            tocm: true,
+            taskList: true,
+            flowChart: true,
+            sequenceDiagram: true,
+        });
+    });
+});
+</script>
+</header>
+<div class="line46"></div>
+<div class="blank"></div>
+<article>
+    <div class="infos">
+      <div class="newsview">
+        <h2 class="intitle">您现在的位置是：<a href="http://blog.lizesen.xyz/index">网站首页</a>&nbsp;&gt;&nbsp;<a>{{str1}}</a></h2>
+        <h3 class="news_title">{{title}}</h3>
+        <div class="news_author"><span style="background:url({{url_for('static',filename='images/author2.png')}}) no-repeat left center">{{au01}}</span><span style="background:url({{url_for('static',filename='images/date.png')}}) no-repeat left center">{{au02}}</span></div>
+        <div class="tags"><a target="_blank">{{tag}}</a> </div>
+        <div class="news_about"><strong>简介</strong>{{about}}</div>
+        <div class="news_infos">
+
+        <div id="md_content_2" class="md_content" style="min-height: 50px;width:90%;">
+            <textarea id="append-test" style="display:none;">
+                {{infos}}
+            
+            </textarea>
+        </div>
+
+
+      </div>
+      </div>
+      <div class="share">
+      <div class="hide_box" style="display: none;"></div>
+      <div class="shang_box" style="display: none;">
+
+        
+    <script type="text/javascript">
+    function dashangToggle(){
+    	$(".hide_box").fadeToggle();
+    	$(".shang_box").fadeToggle();
+    }
+    </script> 
+      </div>
+    </div>
+    </div>
+
+
+
+</article>
+<footer>
+    <p>Powered by <a>Li</a> <a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action">闽ICP备20002404号</a></p>
+</footer>
+</body>
+</html>

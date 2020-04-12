@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>li's blog</title>
+<meta name="description" content="个人博客，是一个学生的个人博客" />
+<meta name="keywords" content="个人博客，Li_个人博客，Li" />
+<meta name="author" content="Li" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{url_for('static', filename='css/base.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='css/m.css')}}" rel="stylesheet">
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-2.1.1.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/page.js')}}"></script>
+</head>
+<body>
+<header>
+  <div id="mnav">
+    <div class="logo"><a href="http://blog.lizesen.xyz">Li's Blog</a></div>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+    <ul id="starlist">
+      <li><a href="http://blog.lizesen.xyz/index">网站首页</a></li>
+      <li><a href="http://blog.lizesen.xyz/cppshare/1">C++</a></li>
+      <li><a href="http://blog.lizesen.xyz/pythonshare/1">Python</a></li>
+      <li><a href="http://blog.lizesen.xyz/projectshare/1">Project</a></li>
+    </ul>
+  </div>
+  <script>
+window.onload = function ()
+{
+	var oH2 = document.getElementById("mnavh"); 
+	var oUl = document.getElementById("starlist");  
+	oH2.onclick = function ()
+	{
+		var style = oUl.style;
+		style.display = style.display == "block" ? "none" : "block";
+		oH2.className = style.display == "block" ? "open" : ""
+	}
+}
+</script> 
+</header>
+<div class="line46"></div>
+  <div class="blank"></div>
+<article>
+  <div class="leftbox">
+    <div class="tuijian">
+      <h2 class="hometitle"><span><a href="/">{{str1}}</a></span>{{str1}}</h2>
+      <ul>
+        {%for (i,j,) in str2%}
+        <li>
+          <div class="tpic"><img src="{{url_for('static', filename='picture/special_6.png')}}"></div>
+          <b>{{i}}</b><span>{{str1}}</span><a href="http://blog.lizesen.xyz/{{type}}/{{j}}" class="readmore">阅读原文</a></li>
+        {%endfor%}
+        </ul>
+      <div class="pagelist"><a title="Total record">&nbsp;<b>{{total}}</b> </a>&nbsp;&nbsp;<a href="http://blog.lizesen.xyz/{{type2}}/1">首页</a>&nbsp;<a href="http://blog.lizesen.xyz/{{type2}}/{{previous_page}}">上一页</a>&nbsp;<a href="http://blog.lizesen.xyz/{{type2}}/{{next_page}}">下一页</a>&nbsp;<a href="http://blog.lizesen.xyz/{{type2}}/{{last_page}}">尾页</a></div>
+    </div>   
+  </div>
+  <div class="rightbox">
+    <div class="aboutme">
+      <h2 class="ab_title">关于我</h2>
+      <a href="http://blog.lizesen.xyz/login"><div class="avatar"><img src="{{url_for('static', filename='picture/head_portrait.JPG')}}" /></div></a>
+      <div class="ab_con">
+        <p>网名：Elegance</p>
+        <p>职业：学生 </p>
+        <p>籍贯：福建</p>
+        <p>邮箱：1534672893@qq.com</p>
+      </div>
+    </div>
+    <div class="links">
+      <h2 class="ab_title">友情链接</h2>
+      <ul>
+        <li><a href="https://github.com">GitHub</a></li>
+        <li><a href="https://www.patest.cn/practice">PTA</a></li>
+        <li><a href="https://www.deepin.org">DEEPIN</a></li>
+      </ul>
+    </div>
+    <div class="weixin">
+      <h2 class="ab_title">QQ关注</h2>
+      <ul>
+        <img src="{{url_for('static', filename='picture/QQ.JPG')}}">
+      </ul>
+    </div>
+  </div>
+</article>
+<footer>
+  <p>Powered by <a>Li</a> <a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action">闽ICP备20002404号</a></p>
+</footer>
+</body>
+</html>
